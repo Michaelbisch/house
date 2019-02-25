@@ -1,23 +1,24 @@
-import React from 'react'
+import React, { Component} from 'react'
 
-function House(props){
-    console.log(props)
-
+ class House extends Component{
+     render() {
+        console.log(this.props)
+        const { house } = this.props
         return(
             <div style={{
                 margin: '40px'
             }}> 
               
-                <p>{props.house.name}</p>
-                <p>{props.house.address}</p>
-                <p>{props.house.city}</p>
-                <p>{props.house.st}</p>
-                <p>{props.house.zipcode}</p>
-                <button>Delete</button>
+                <p>{house.name}</p>
+                <p>{house.address}</p>
+                <p>{house.city}</p>
+                <p>{house.st}</p>
+                <p>{house.zipcode}</p>
+                <button onClick={() => this.props.delete(this.props.house.house_id)}>Delete</button>
                 
             </div>
         )
-    
+    }
 }
 
 export default House

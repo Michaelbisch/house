@@ -7,6 +7,7 @@ export default function HouseList(props) {
            <House 
            key={house.house_id}
            house={house}
+           delete={props.delete}
            />
         )
     })
